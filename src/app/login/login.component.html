@@ -1,11 +1,14 @@
-<h1>{{form | json}}</h1>
+<div class="container">
+<img class="UrbanTrace" src="../../assets/images/UrbanTrace.png" alt="UrbanTrace">
+</div>
 <section>
-  <img src="" alt="UrbanTrace">
-  <form #loginForm="ngForm" (ngSubmit)="addSignUpForm(loginForm)">
+  <form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)">
     <label>E-Mail:</label>
+    <br>
     <input required name="email" [(ngModel)]="email" placeholder="Email" type="email">
     <br>
     <label>Password:</label>
+    <br>
     <input #myPassword="ngModel" required name="password" [(ngModel)]="password" placeholder="Password" type="password">
     <div *ngIf="myPassword.errors && (myPassword.dirty || myPassword.touched)">
       <p style="background:red;color:white" [hidden]="!myPassword.errors.required">
@@ -15,7 +18,8 @@
     <br>
     <button type="submit">Log In</button>
     <br>
-    <button>Sign In</button>
-    <button>Sign In with Facebook</button>
+    <button onclick="location.href='/signup'">Sign In</button>
+    <br>
+    <button id="button-fb">Sign In with Facebook</button>
   </form>
 </section>
